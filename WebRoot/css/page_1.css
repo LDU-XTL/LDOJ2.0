@@ -52,25 +52,7 @@ body{
     width: 20%;
     margin: 0 auto;
 }
-.u_top_2{
-	 height: 106px;
-    width: 17%;
-    float: left;
-    -webkit-margin-start: auto;
-    -webkit-margin-end: auto;
-    margin-left: 15px;
-}
-.u_top_2 li{
-	width: 100%;
-	margin-top: 2px;
-	text-align: center;
-}
-.u_top_2 li a{
-  
-	color:#102538;
-	font-family:collegiate-normal;
-	font-size: 18px;
-}
+
 .u_top_3{
 	    height: 82px;
     width: 20%;

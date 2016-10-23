@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				<li><a href="">Total Rank</a></li>
    			</ul>
    			<ul class="u_top_2">
-   				<form method="post" action="#">
+   				<form method="post" action="servlet/LoginHandle">
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
 						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20"></td></tr>

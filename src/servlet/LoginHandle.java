@@ -15,7 +15,9 @@ public class LoginHandle extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		String username=request.getParameter("username");
+		String userpass=request.getParameter("userpass");
+		String sql="select ";
 	
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
