@@ -116,15 +116,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				}
 				
 			 %>
+			 	<%
+			 	int p_page=((Integer.parseInt(pid)-1000)/100)+1;
+				String p_des="../problem/Problems/page_"+String.valueOf(p_page)+"/"+pid+".html";
+			 %>
 			<div class="p_tm">
 				Time Limit: <%=p_tlim %>&nbsp;&nbsp;&nbsp;Memory Limit:<%=p_mlim %>
 				<br>
 				Total Submission(s):<%=p_sub+"        " %>&nbsp;&nbsp;&nbsp;&nbsp;Accepted Submission(s): <%=p_ac %>
 			</div>
+		
 			<p class="pst">Problem Description</p>
-			<%
-				out.println(s); 
-			%>
+			
+			<jsp:include page="<%=p_des %>"></jsp:include>
+			
 		<div class="p_body_foot">
 							<a href="jsp/submit.jsp?pid=<%=pid %>" class="p_sub">Submit</a>
 							<a href="" class="p_sub">Statistic</a>

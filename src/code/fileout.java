@@ -36,27 +36,23 @@ public class fileout {
 		
 	}
 	///读文件
-	public static String read(String fileName)  
-	{     
-	    String fileContent = "";     
-	    try   
-	    {       
-	        File f = new File(fileName);      
-	        if(f.isFile()&&f.exists())  
-	        {       
-	            InputStreamReader read = new InputStreamReader(new FileInputStream(f),"GB2312");       
-	            BufferedReader reader=new BufferedReader(read);       
-	            String line;       
-	            while ((line = reader.readLine()) != null)   
-	            {        
-	                fileContent += line;       
-	            }         
-	            read.close();      
-	        }     
-	    } catch (Exception e)   
-	    {         
-	        e.printStackTrace();     
-	    }     
-	    return fileContent;   
-	}   
+	public static String read(String filePathAndName) {
+		  String fileContent = "";
+		  try { 
+		   File f = new File(filePathAndName);
+		   if(f.isFile()&&f.exists()){
+		    InputStreamReader read = new InputStreamReader(new FileInputStream(f),"UTF-8");
+		    BufferedReader reader=new BufferedReader(read);
+		    String line;
+		    while ((line = reader.readLine()) != null) {
+		     fileContent += line;
+		    }  
+		    read.close();
+		   }
+		  } catch (Exception e) {
+		   System.out.println("读取文件内容操作出错");
+		   e.printStackTrace();
+		  }
+		  return fileContent;
+		} 
 }
