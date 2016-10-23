@@ -56,6 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				<li><a href="">Region</a></li>
    				<li><a href="">Total Rank</a></li>
    			</ul>
+<<<<<<< HEAD
    			<%
    				String username="",userpass="";
    				username=(String)request.getParameter("username");
@@ -72,6 +73,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			 	//if()
    			 %>
    				<form method="get" action="servlet/LoginHandle">
+=======
+   			<ul class="u_top_2" id="u_top_2" >
+   				<form method="post" action="#">
+>>>>>>> master
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
 						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20" value=<%=username %>></td></tr>
@@ -80,9 +85,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	</table>
 			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;
 			  	<nav class="bounce_nav">
-			  	<a href="#" style="text-decoration: none" class="cd-signup">Register</a>
+			  	<a style="text-decoration: none" class="cd-signup">Register</a>
 			  	</nav>
 				</form>
+   			</ul>
+   			<ul class="u_top_4" id="u_top_4" style="display: none;">
+   			  <img src="img/login_1.png"><a class="username">L-75</a><br />
+   				<img src="img/login_2.png"><a class="username">L-75</a><br />
+   				<img src="img/login_4.png"><a class="username">L-75</a><br />
+   				<img src="img/login_3.png"><a class="username">Logout</a><br />
    			</ul>
    		</div>
    		<div class="body">
@@ -105,13 +116,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		</div>
     
     </div>
-    	<div class="cd-user-modal">  
+		<div class="cd-user-modal">  
 	    <div class="cd-user-modal-container"> 
 	    	<form method=POST action=register>
-			<table align=center cellSpacing=3 cellPadding=3 width=600 border=0>
-				<tr><td colspan=2 width=600 height=40>
+			<table align=center cellSpacing=3 cellPadding=3 width=400 border=0>
+				<tr><td colspan=2 width=200 height=40>
 				<h1 style="margin-top: 3%; margin-bottom: 3%;">Sign Up</td></tr>
+<<<<<<< HEAD
 				<tr><td width=75%><input class="input" type=text id="user_id" placeholder="User ID" autocomplete="off" onfocus= "showDesc('clue_user')" onblur="checkUsername()"></td></tr>
+=======
+				<tr><td><input class="input" type=text id="user_id" placeholder="User ID" autocomplete="off" onfocus= showDesc("clue_user") onblur="checkUsername()"></td></tr>
+>>>>>>> master
 				<tr><td><p class="clue_user" id="clue_user">6 - 16 letters and digits allowed</p></td></tr>
 				
 				<tr><td><input class="input" type=text id="nick" placeholder="Nick Name" autocomplete="off" onfocus= "showDesc('clue_nick_name)" onblur="checkNickname()"></td></tr>
@@ -126,7 +141,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr><td><input class="input" type=text id="school" placeholder="School" autocomplete="off" onfocus= "showDesc('clue_school')" onblur="checkSchool()"></td></tr>
 				<tr><td><p class="clue_school" id="clue_school">School,Allow null values</p></td></tr>
 				
+<<<<<<< HEAD
 				<tr><td><input class="input" type=text id="email" placeholder="Email"  autocomplete="off" onfocus= "showDesc('clue_email')" onblur="checkEmail()"></td>
+=======
+				<tr><td><input class="input" type=text id="email" placeholder="Email" autocomplete="off" onfocus=showDesc("clue_email") onblur="checkEmail()"></td>
+>>>>>>> master
 				<tr><td><p class="clue_email" id="clue_email">Email address,Allow null values</p></td></tr>
 				
 				</tr><tr><td align=left>
