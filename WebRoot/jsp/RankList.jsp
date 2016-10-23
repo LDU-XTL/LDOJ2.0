@@ -63,7 +63,7 @@
    				<li><a href="">Region</a></li>
    				<li><a href="">Common Contest</a></li>
    			</ul>
-   			<ul class="u_top_2">
+   			<ul class="u_top_2" id="u_top_2" >
    				<form method="post" action="#">
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
@@ -76,6 +76,12 @@
 			  	<a style="text-decoration: none" class="cd-signup">Register</a>
 			  	</nav>
 				</form>
+   			</ul>
+   			<ul class="u_top_4" id="u_top_4" style="display: none;">
+   			  <img src="img/login_1.png"><a class="username">L-75</a><br />
+   				<img src="img/login_2.png"><a class="username">L-75</a><br />
+   				<img src="img/login_4.png"><a class="username">L-75</a><br />
+   				<img src="img/login_3.png"><a class="username">Logout</a><br />
    			</ul>
 			</div>
 			<div class="body">

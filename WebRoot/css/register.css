@@ -259,3 +259,9 @@ DEMO 2
 	font-weight: 600;
 	display: none;
 }
+.u_top_4 img{
+	padding-left: 4%;
+}
+.u_top_4 a{
+	padding-left: 2%;
+}

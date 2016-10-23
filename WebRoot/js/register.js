@@ -1,13 +1,20 @@
-//è¾“å…¥æ¡†è·å¾—ç„¦ç‚¹æ—¶ï¼Œæ˜¾ç¤ºæç¤ºå†…å®¹
+/**
+ * ½¹µãÔÚ¸Ã¿òÉÏÏÔÊ¾ÌáÊ¾ĞÅÏ¢
+ * @return
+ */
 function showDesc(id)
 {  	
 	var obj = document.getElementById(id);
 	obj.style.display ="inline";
 }
-//è¾“å…¥æ¡†å¤±å»ç„¦ç‚¹æ—¶æ£€éªŒè¾“å…¥å†…å®¹æ˜¯å¦æœ‰æ•ˆ
+
+/**
+ * ¼ì²éUserName¸ñÊ½ÊÇ·ñÕıÈ·
+ * @return
+ */
+
 function checkUsername()
 {
-    //åªç®€å•çš„åˆ¤æ–­ç”¨æˆ·åçš„é•¿åº¦
     var user = document.getElementById("user_id");
     var obj = document.getElementById("clue_user");
     var username=user.value;
@@ -29,6 +36,11 @@ function checkUsername()
     	return true;
     }
 }
+/**
+ * ¼ì²éNickName¸ñÊ½ÊÇ·ñÕıÈ·
+ * @return
+ */
+
 function checkNickname(){
 	var nickname = document.getElementById("nick").value;
 	var obj = document.getElementById("clue_nick_name");
@@ -51,6 +63,12 @@ function checkNickname(){
 		return true;
 	}
 }
+
+/**
+ * ¼ì²éÃÜÂë¸ñÊ½ÊÇ·ñÕıÈ·
+ * @return
+ */
+
 function checkPassword()
 {
 	var passwd = document.getElementById("password").value;
@@ -73,6 +91,12 @@ function checkPassword()
 		return true;
 	}
 }
+
+/**
+ * ¼ì²éÃÜÂëºÍÈ·ÈÏÃÜÂëÊÇ·ñÒ»ÖÂ
+ * @return
+ */
+
 function checkPassword2()
 {
      var id=document.getElementById("password");
@@ -82,7 +106,7 @@ function checkPassword2()
      var password2 = id2.value;
      if(password1!=password2)
      {
-        obj.innerHTML="Your confirmed password and new password do not match.";
+        obj.innerHTML="Password and new password do not match.";
         obj.style.color="red";
         return false;
      }
@@ -95,6 +119,12 @@ function checkPassword2()
      }
          
 }
+
+/**
+ * ¼ì²éSchool¸ñÊ½ÊÇ·ñÕıÈ·
+ * @return
+ */
+
 function checkSchool(){
 	var id =  document.getElementById("school")
    	var Email = id.value;
@@ -102,15 +132,17 @@ function checkSchool(){
 	obj.style.display="none";
 	return true;
 }
+/**
+ * ¼ì²éEmail¸ñÊ½ÊÇ·ñÕıÈ·
+ * @return
+ */
 
 function checkEmail()
 {
-// åˆ©ç”¨æ­£åˆ™è¡¨è¾¾å¼å¯¹è¾“å…¥æ•°æ®åŒ¹é…
    var id =  document.getElementById("email")
    var Email = id.value;
    var obj = document.getElementById("clue_email");
    var patrn = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-//ä»¥å­—æ¯æˆ–æ•°å­—å¼€å¤´ï¼Œè·Ÿä¸Š@,å­—æ¯æ•°å­—ä»¥.comç»“å°¾
     if(Email.length==0)
 	{
 		obj.style.display="none";

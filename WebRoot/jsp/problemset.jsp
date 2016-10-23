@@ -59,7 +59,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				<li><a href="">Region</a></li>
    				<li><a href="">Common Contest</a></li>
    			</ul>
-   			<ul class="u_top_2">
+   			<ul class="u_top_3">
+   				<li><a href="">Common Contest</a></li>
+   				<li><a href="">Region</a></li>
+   				<li><a href="">Total Rank</a></li>
+   			</ul>
+   			<ul class="u_top_2" id="u_top_2" >
    				<form method="post" action="#">
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
@@ -73,19 +78,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	</nav>
 				</form>
    			</ul>
-   			<ul class="u_top_2">
-   				<form method="post" action="#">
-			  	<table width="68" border="0" align="center" cellspacing="0">
-			  		<tbody>
-						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20"></td></tr>
-						<tr><td>Password&nbsp;</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20"></td></tr>
-			  		</tbody>
-			  	</table>
-			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;
-			  	<nav class="bounce_nav">
-			  	<a style="text-decoration: none" class="cd-signup">Register</a>
-			  	</nav>
-				</form>
+   			<ul class="u_top_4" id="u_top_4" style="display: none;">
+   			  <img src="img/login_1.png"><a class="username">L-75</a><br />
+   				<img src="img/login_2.png"><a class="username">L-75</a><br />
+   				<img src="img/login_4.png"><a class="username">L-75</a><br />
+   				<img src="img/login_3.png"><a class="username">Logout</a><br />
    			</ul>
    		</div> 
 			<div class="body">
