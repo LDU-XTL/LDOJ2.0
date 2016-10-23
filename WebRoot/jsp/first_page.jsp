@@ -17,13 +17,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-        <title>Problem Status List</title>
-		<link rel="shortcut icon" href="img/ldu_top_1.ico"/>
-    	<link href="css/page_1.css" type="text/css" rel="stylesheet"/>
-    	<link rel="stylesheet" href="css/register.css" />
-        <script type="text/javascript" src="js/register.js" ></script>
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
-		<script type="text/javascript" src="js/register_jquery.js" ></script>
+    <title>Problem Status List</title>
+	<link rel="shortcut icon" href="img/ldu_top_1.ico"/>
+    <link href="css/page_1.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/register.css" />
+    <script type="text/javascript" src="js/register.js" ></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
+	<script type="text/javascript" src="js/register_jquery.js" ></script>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	</table>
 			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;
 			  	<nav class="bounce_nav">
-			  	<a href="#" style="text-decoration: none" class="cd-signup">Register</a>
+			  	<a style="text-decoration: none" class="cd-signup">Register</a>
 			  	</nav>
 				</form>
    			</ul>

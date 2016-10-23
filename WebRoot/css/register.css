@@ -215,6 +215,11 @@ DEMO 2
 	margin-left: 26px;
 	color: black;
 }
+
+.u_top_2 form nav a:hover,.login form nav a:hover{
+	cursor:pointer;
+}
+
 .bounce_nav,.u_top_2 input{
 	float: left;
 }
@@ -228,14 +233,13 @@ DEMO 2
 	text-align: left;
 	margin-left: 5%;
 	font-size: 19px;
-	width: 95px;
 }
 
 .input{
 	height: 35px;
 	border: solid 1px #ccc;
 	border-radius:7px;
-	margin:9px 0px 0px 10%;
+	margin:14px 0px 0px 15%;
 	width: 280px;
 	padding-left: 5px;
 	outline:none;
@@ -250,7 +254,7 @@ DEMO 2
 }
 .clue_user,.clue_nick_name,.clue_nick_name,.clue_password,.clue_rptpassword,.clue_school,.clue_email{
 	font-size: 14px;
-	margin:0px 0px 2% 10%;
+	margin:0px 0px 2% 15%;
 	color: #008400;
 	font-weight: 600;
 	display: none;
