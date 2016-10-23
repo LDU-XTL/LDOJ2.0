@@ -1,3 +1,1 @@
-# Lduoj
-# Lduoj
-# LODJ2.0
+#This is Ludong University Online Judge developed by the LDU-XTL team
