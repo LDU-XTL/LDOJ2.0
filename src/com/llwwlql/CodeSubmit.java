@@ -39,7 +39,6 @@ public class CodeSubmit {
 	private static String SCHARSET = "GB2312";
 	private static String STATUSUTL="http://poj.org/status?problem_id=&user_id=";
 	private static HttpClient httpclient = new DefaultHttpClient();
-
 	public String getProblem_id() {
 		return problem_id;
 	}
@@ -130,23 +129,6 @@ public class CodeSubmit {
 	 * 获取提交结果的网页源码，存到fileName文件里
 	 * fileName默认路径为：\GetSubmitResult\GetResult.txt
 	 */
-	public String GetResult(String Url) throws ClientProtocolException, IOException{
-		HttpGet httpget = new HttpGet(Url);
-		HttpResponse response = httpclient.execute(httpget);
-		String strResult = null;
-		if(response!=null)
-		{
-			HttpEntity entity = response.getEntity();
-			strResult = EntityUtils.toString(entity,"UTF-8");
-			EntityUtils.consume(entity);
-		}
-		else
-		{
-			System.out.println("获取失败！");
-		}
-		httpget.abort();
-		return strResult;
-	}
 
 	public static String getSTATUSUTL() {
 		return STATUSUTL;

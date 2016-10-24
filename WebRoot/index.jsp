@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>   
+  <head>
     <title>Welcome to Lu Dong University ACM</title>
     <link rel="shortcut icon" href="img/ldu_top_1.ico"/>
     <link href="css/page_1.css" type="text/css" rel="stylesheet"/>

@@ -7,6 +7,8 @@
 <%@page import="com.llwwlql.*" %>
 <%@page import="java.io.*" %>
 <%@page import="java.sql.*" %>
+<%@page import="problem.ProblemStatus" %>
+<%@page import="com.llwwlql.ResultSource" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -180,7 +182,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("Language") %></td>
  						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("CodeLength") %></td>
  						<td width="18%" bgcolor="#9db4dd"><%=rs.getString("SubmitTime") %></td>
- 					</tr>	
+ 					</tr>
  					 <%
  					 }
  					 Constant.status_rank--;
@@ -200,7 +202,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			<span class="f2">Copyright@2012-2016 LDU ACM Team. All Rights Reserved.</span>
 			</div>
 		</div>
-			<div class="cd-user-modal">  
+		<div class="cd-user-modal">  
 	    <div class="cd-user-modal-container"> 
 	    	<form method=POST action=register>
 			<table align=center cellSpacing=3 cellPadding=3 width=600 border=0>
@@ -229,5 +231,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</td></tr></table></form>
 	    </div> 
 	</div>
+	<%
+		
+			String sub_judge=(String)session.getAttribute("sub_judge");
+			if(sub_judge.equals("true"))
+			{
+				ProblemStatus ps = new ProblemStatus();
+				String result = "Waiting";
+				String resultUrl =(String)session.getAttribute("resultUrl");
+				ResultSource resultSource = new ResultSource();
+				int runid=Integer.parseInt((String)session.getAttribute("runid"));
+				while(result.equals("Waiting") || result.equals("Compiling") || result.equals("Running & Judging"))
+				{
+					Thread.sleep(100);
+					String sourceString = resultSource.GetResult(resultUrl);
+					result = ps.problemStatus(sourceString,runid);
+				}
+				request.getSession().setAttribute("sub_judge","false");
+			}
+			%>
   </body>
 </html>

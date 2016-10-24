@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.Response;
 
 import org.apache.http.client.ClientProtocolException;
 
@@ -23,6 +24,7 @@ import code.fileout;
 
 import com.llwwlql.CodeSubmit;
 import com.llwwlql.Login;
+import com.llwwlql.ResultSource;
 
 import constant.Constant;
 
@@ -42,7 +44,7 @@ public class SubHandle extends HttpServlet {
 			ResultSet rs=null;
 			int count=0;
 			//SqlConnect.load();
-				//SqlConnect.getConnection();
+			//SqlConnect.getConnection();
 			
 			//user_name未锟斤拷
 			String sql="SELECT COUNT(problem_id) as problem_count FROM problemstatus WHERE problem_id="+problem_id+" and username='"+user_name+"';";
@@ -57,30 +59,30 @@ public class SubHandle extends HttpServlet {
 			//user_id未锟斤拷
 			//锟斤拷锟斤拷锟斤拷氲斤拷募锟斤拷锟铰凤拷锟斤拷锟斤拷薷锟�
 			//String fileName="E:/tomcat/apache-tomcat-7.0.69/"+user_name+"/"+problem_id;
-			String fileName = "D:/Test";
+			String fileName = "C:/Test2";
 			new fileout(str,fileName,count);
 			
 			i = (i+1)%3;
-			Login login = new Login(User_id[i], "lduacm", problem_id);
+			Login login = new Login(User_id[i], "lduacm", problem_id);			
 			String location = login.PostLogin();
 			String language=req.getParameter("s_select");
 			String file_name=fileName+"/"+String.valueOf(count+1)+".txt";
 			CodeSubmit codeSubmit = new CodeSubmit(problem_id,"1");
 			codeSubmit.setSource(file_name);
+			//代码提交
 			codeSubmit.Submit(location);
+			
 			problemStatus_sql psSql = new problemStatus_sql();
-			//锟矫伙拷锟斤拷user未锟斤拷
 			psSql.insert(user_name,User_id[i], Integer.parseInt(problem_id), "Wating","","",language,"", "2016-10-11 08:19:52",file_name);
-			String Url = codeSubmit.getSTATUSUTL() + User_id[i];
+			
+			String resultUrl = codeSubmit.getSTATUSUTL() + User_id[i];
 			int runid=psSql.selectrun_id(file_name);
-			ProblemStatus ps = new ProblemStatus();
-			String result = "Waiting";
-			while(result.equals("Waiting") || result.equals("Compiling") || result.equals("Running & Judging")){
-				Thread.sleep(200);
-				result = ps.problemStatus(codeSubmit.GetResult(Url),runid);
-			}
-			System.out.println(result);
-			//int pid=Integer.parseInt(problem_id);
+			req.getSession().setAttribute("resultUrl",resultUrl);
+			req.getSession().setAttribute("runid",String.valueOf(runid));
+			req.getSession().setAttribute("sub_judge","true");
+			resp.sendRedirect("../jsp/first_page.jsp");
+//			System.out.println(result);
+//			//int pid=Integer.parseInt(problem_id);
 			/*ResultSet rs_p=null;
 			int psub=0,pac=0;
 			String se_p="select p_sub,p_ac from problem where p_id='"+problem_id+"'";
@@ -107,7 +109,8 @@ public class SubHandle extends HttpServlet {
 			//ResultSet rs_up=null;
 			SqlConnect.add(up_ps);
 			System.out.println(psub+pac+radio);*/
-			resp.sendRedirect("../jsp/first_page.jsp");
+			
+			
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
