@@ -9,4 +9,6 @@ public class Constant {
 	public static String p_id="";///记录当前题目ID
 	public static int page=1;//记录当前题目页面数
 	public static int MAX_PAGE=31;//当前题目总页数
+	public static boolean login_status=false;///记录用户登陆状态
+	public static String[] p_language={"G++","GCC","Java","Pascal","C++","C","Fortran"};
 }

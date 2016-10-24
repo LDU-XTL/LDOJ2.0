@@ -63,7 +63,7 @@ public class SubHandle extends HttpServlet {
 			i = (i+1)%3;
 			Login login = new Login(User_id[i], "lduacm", problem_id);
 			String location = login.PostLogin();
-			String language=req.getParameter("s_select");
+			String language=Constant.p_language[Integer.parseInt(req.getParameter("s_select"))];
 			String file_name=fileName+"/"+String.valueOf(count+1)+".txt";
 			CodeSubmit codeSubmit = new CodeSubmit(problem_id,"1");
 			codeSubmit.setSource(file_name);
@@ -76,7 +76,7 @@ public class SubHandle extends HttpServlet {
 			ProblemStatus ps = new ProblemStatus();
 			String result = "Waiting";
 			while(result.equals("Waiting") || result.equals("Compiling") || result.equals("Running & Judging")){
-				Thread.sleep(200);
+				Thread.sleep(1000);
 				result = ps.problemStatus(codeSubmit.GetResult(Url),runid);
 			}
 			System.out.println(result);
