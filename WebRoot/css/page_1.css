@@ -279,6 +279,9 @@ div{
 .ps_top2 td{
 	height: 39px;
 }
+.ps_top2 td a:HOVER{
+	color: red;
+}
 .pst{
 	height: 38px;
     padding: 0 14px;
@@ -344,6 +347,10 @@ div{
     font-size: 12px;
     font-weight: bold;
     color: #1a5cc8;
+    padding-top: 25px;
+}
+.ps_page a:HOVER{
+	color: red;
 }
 .p_tm{
 	font-family: Arial;

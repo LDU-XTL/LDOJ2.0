@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-10-21 21:17:45
+Date: 2016-10-25 15:40:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -3075,6 +3075,7 @@ INSERT INTO `problem` VALUES ('4054', 'KINA Is Not Abbreviation', '0', '0', null
 -- ----------------------------
 DROP TABLE IF EXISTS `problemstatus`;
 CREATE TABLE `problemstatus` (
+  `Nickname` varchar(20) NOT NULL,
   `Runid` int(15) NOT NULL AUTO_INCREMENT,
   `Username` varchar(15) NOT NULL,
   `Problem_id` int(10) DEFAULT NULL,
@@ -3087,130 +3088,140 @@ CREATE TABLE `problemstatus` (
   `CodeUrl` varchar(60) DEFAULT NULL,
   `Submitid` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`Runid`)
-) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of problemstatus
 -- ----------------------------
-INSERT INTO `problemstatus` VALUES ('1', 'fox1', '1001', 'Wrong Answer', '', '', 'C++', '1023B', '2016-10-11 08:19:52', '', '');
-INSERT INTO `problemstatus` VALUES ('2', 'fox2', '1032', 'Accepted', '1276K', '47MS', 'G++', '909B', '2016-10-11 08:22:17', '', '');
-INSERT INTO `problemstatus` VALUES ('3', 'hjxcpg', '1787', 'Time Limit Exceeded', '', '', 'C++', '1112B', '2016-10-11 08:21:24', '', '');
-INSERT INTO `problemstatus` VALUES ('4', 'please3', '1502', 'Accepted', '776K', '0MS', 'G++', '1501B', '2016-10-11 08:13:01', '', '');
-INSERT INTO `problemstatus` VALUES ('5', 'do3', '2521', 'Accepted', '388K', '0MS', 'G++', '198B', '2016-10-11 07:40:26', '', '');
-INSERT INTO `problemstatus` VALUES ('6', 'vjudge1', '2521', 'Presentation Error', '', '', 'G++', '200B', '2016-10-11 07:38:38', '', '');
-INSERT INTO `problemstatus` VALUES ('7', 'hjxcpg', '1787', 'Wrong Answer', '', '', 'C++', '1110B', '2016-10-11 08:22:17', '', '');
-INSERT INTO `problemstatus` VALUES ('8', 'xuwei5311', '1012', 'Time Limit Exceeded', '', '', 'C++', '418B', '2016-10-11 08:08:35', '', '');
-INSERT INTO `problemstatus` VALUES ('9', 'vjudge1', '2521', 'Presentation Error', '', '', 'G++', '200B', '2016-10-11 07:38:38', '', '');
-INSERT INTO `problemstatus` VALUES ('10', '99021314389', '2328', 'Compile Error', '', '', 'C', '1032B', '2016-10-11 08:19:52', '', '');
-INSERT INTO `problemstatus` VALUES ('11', 'Musio', '2000', 'Accepted', '320K', '0MS', 'C++', '333B', '2016-10-11 08:10:20', '', '');
-INSERT INTO `problemstatus` VALUES ('12', 'do3', '2521', 'Accepted', '388K', '0MS', 'G++', '198B', '2016-10-11 07:40:26', '', '');
-INSERT INTO `problemstatus` VALUES ('13', 'block3', '3050', 'Accepted', '1692K', '16MS', 'G++', '880B', '2016-10-11 08:19:07', '', '');
-INSERT INTO `problemstatus` VALUES ('14', 'loi_francis', '2485', 'Compile Error', '', '', 'C++', '869B', '2016-10-11 07:13:37', '', '');
-INSERT INTO `problemstatus` VALUES ('15', 'JimMoriarty', '2376', 'Wrong Answer', '', '', 'C++', '679B', '2016-10-11 07:10:47', '', '');
-INSERT INTO `problemstatus` VALUES ('16', 'cavatina2016', '1032', 'Wrong Answer', '', '', 'C++', '907B', '2016-10-11 06:47:40', '', '');
-INSERT INTO `problemstatus` VALUES ('17', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('18', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('19', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('20', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('21', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('22', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('23', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('24', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('25', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('26', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('27', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('28', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('29', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('30', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('31', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('32', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('33', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('34', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('35', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('36', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('37', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('38', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('39', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('40', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('41', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('42', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('43', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('44', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('51', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('52', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('53', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('54', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('55', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('56', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('57', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('58', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('59', 'user2', '123', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('60', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('61', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('62', 'user2', '1212', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212121.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('63', 'user2', '1222', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212221.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('64', 'user2', '1223', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212231.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('65', 'user2', '2233', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user222331.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('66', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user211111.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('67', 'user2', '1223', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'ldojuser212232.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('68', 'user2', '1123', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'ldojuser211231.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('69', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user211112.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('70', 'user2', '1212', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212122.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('71', 'user2', '2323', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user223231.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('72', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/1111/3.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('73', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/4.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('74', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/5.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('75', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/6.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('76', 'user2', '1122', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/1122/1.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('77', 'user2', '2324', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user223241.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('78', 'user2', '1212', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212123.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('79', 'user2', '2344', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', './user2/23441.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('80', 'user2', '3211', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/32111.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('81', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test7.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('82', 'user2', '1111', '', '', '', '2', '34B', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('83', 'user2', '1111', 'Running & Judging', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/9.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('84', 'user2', '1111', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/10.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('85', 'user2', '1111', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/11.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('86', 'user2', '1111', 'Running & Judging', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/12.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('87', 'user2', '1111', 'Compiling', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/13.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('88', 'user2', '1230', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('89', 'user2', '1230', '', '', '', '2', '40B', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('90', 'user2', '1230', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('91', 'user2', '1231', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('92', 'user2', '1231', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('93', 'user2', '1230', '', '', '', '2', '40B', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('94', 'user2', '1230', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('95', 'user2', '1230', '', '', '', '2', '78B', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('96', 'user2', '1166', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/7.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('97', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('98', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/9.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('99', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/10.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('100', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/11.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('101', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/12.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('102', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/13.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('103', 'user2', '1166', 'Compiling', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/14.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('104', 'user2', '1166', 'Accepted', '360K', '704MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/15.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('105', 'user2', '1166', 'Running & Judging', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/16.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('106', 'user2', '1166', 'Accepted', '360K', '704MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/17.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('107', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/18.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('108', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/19.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('109', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/20.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('110', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('111', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('112', 'user2', '1005', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('113', 'user2', '1005', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('114', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('115', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('116', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('117', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('118', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('119', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('120', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('121', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('122', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox233');
-INSERT INTO `problemstatus` VALUES ('123', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox234');
-INSERT INTO `problemstatus` VALUES ('124', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/7.txt', 'Fox235');
-INSERT INTO `problemstatus` VALUES ('125', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('weq', '1', 'fox1', '1001', 'Wrong Answer', '', '', 'C++', '1023B', '2016-10-11 08:19:52', '', '');
+INSERT INTO `problemstatus` VALUES ('qwq', '2', 'fox2', '1032', 'Accepted', '1276K', '47MS', 'G++', '909B', '2016-10-11 08:22:17', '', '');
+INSERT INTO `problemstatus` VALUES ('weq', '3', 'hjxcpg', '1787', 'Time Limit Exceeded', '', '', 'C++', '1112B', '2016-10-11 08:21:24', '', '');
+INSERT INTO `problemstatus` VALUES ('qweq', '4', 'please3', '1502', 'Accepted', '776K', '0MS', 'G++', '1501B', '2016-10-11 08:13:01', '', '');
+INSERT INTO `problemstatus` VALUES ('qwqw', '5', 'do3', '2521', 'Accepted', '388K', '0MS', 'G++', '198B', '2016-10-11 07:40:26', '', '');
+INSERT INTO `problemstatus` VALUES ('qweqw', '6', 'vjudge1', '2521', 'Presentation Error', '', '', 'G++', '200B', '2016-10-11 07:38:38', '', '');
+INSERT INTO `problemstatus` VALUES ('qwe', '7', 'hjxcpg', '1787', 'Wrong Answer', '', '', 'C++', '1110B', '2016-10-11 08:22:17', '', '');
+INSERT INTO `problemstatus` VALUES ('weqw', '8', 'xuwei5311', '1012', 'Time Limit Exceeded', '', '', 'C++', '418B', '2016-10-11 08:08:35', '', '');
+INSERT INTO `problemstatus` VALUES ('qwew', '9', 'vjudge1', '2521', 'Presentation Error', '', '', 'G++', '200B', '2016-10-11 07:38:38', '', '');
+INSERT INTO `problemstatus` VALUES ('qwew', '10', '99021314389', '2328', 'Compile Error', '', '', 'C', '1032B', '2016-10-11 08:19:52', '', '');
+INSERT INTO `problemstatus` VALUES ('qww', '11', 'Musio', '2000', 'Accepted', '320K', '0MS', 'C++', '333B', '2016-10-11 08:10:20', '', '');
+INSERT INTO `problemstatus` VALUES ('qe', '12', 'do3', '2521', 'Accepted', '388K', '0MS', 'G++', '198B', '2016-10-11 07:40:26', '', '');
+INSERT INTO `problemstatus` VALUES ('qwe', '13', 'block3', '3050', 'Accepted', '1692K', '16MS', 'G++', '880B', '2016-10-11 08:19:07', '', '');
+INSERT INTO `problemstatus` VALUES ('eq', '14', 'loi_francis', '2485', 'Compile Error', '', '', 'C++', '869B', '2016-10-11 07:13:37', '', '');
+INSERT INTO `problemstatus` VALUES ('eqe', '15', 'JimMoriarty', '2376', 'Wrong Answer', '', '', 'C++', '679B', '2016-10-11 07:10:47', '', '');
+INSERT INTO `problemstatus` VALUES ('we', '16', 'cavatina2016', '1032', 'Wrong Answer', '', '', 'C++', '907B', '2016-10-11 06:47:40', '', '');
+INSERT INTO `problemstatus` VALUES ('qqwew', '17', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('wq', '18', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('eew', '19', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'C:AppliciationD_WorkCodeJaveHDUoj1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('wqe', '20', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('qwe', '21', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('wewe', '22', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('we', '23', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('ewew', '24', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('ewewe', '25', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('qwew', '26', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('weq', '27', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('qweq', '28', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '29', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '30', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '31', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '32', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '33', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '34', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '35', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '36', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '37', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '38', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '39', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '40', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '41', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '42', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '43', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '44', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '51', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '52', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '53', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '54', 'user1', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'D:/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '55', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '56', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '57', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '58', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '59', 'user2', '123', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user2', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '60', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '61', 'user2', '1166', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user21166', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '62', 'user2', '1212', 'Wating', '', '', 'C', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212121.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '63', 'user2', '1222', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212221.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '64', 'user2', '1223', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212231.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '65', 'user2', '2233', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user222331.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '66', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user211111.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '67', 'user2', '1223', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'ldojuser212232.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '68', 'user2', '1123', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'ldojuser211231.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '69', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user211112.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '70', 'user2', '1212', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212122.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '71', 'user2', '2323', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user223231.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '72', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/1111/3.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '73', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/4.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '74', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/5.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '75', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69user2/1111/6.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '76', 'user2', '1122', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/1122/1.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '77', 'user2', '2324', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user223241.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '78', 'user2', '1212', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:	omcatapache-tomcat-7.0.69user212123.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '79', 'user2', '2344', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', './user2/23441.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '80', 'user2', '3211', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'E:/tomcat/apache-tomcat-7.0.69/user2/32111.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '81', 'user2', '1111', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test7.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '82', 'user2', '1111', '', '', '', '2', '64B', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '83', 'user2', '1111', '', '', '', '2', '86B', '2016-10-11 08:19:52', 'D:/Test/9.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '84', 'user2', '1111', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/10.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '85', 'user2', '1111', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/11.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '86', 'user2', '1111', 'Running & Judging', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/12.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '87', 'user2', '1111', 'Compiling', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/13.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '88', 'user2', '1230', '', '', '', '2', '58B', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '89', 'user2', '1230', '', '', '', '2', '74B', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '90', 'user2', '1230', '', '', '', '2', '129B', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '91', 'user2', '1231', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '92', 'user2', '1231', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '93', 'user2', '1230', '', '', '', '2', '40B', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '94', 'user2', '1230', 'Accepted', '388K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '95', 'user2', '1230', '', '', '', '2', '78B', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '96', 'user2', '1166', '', '', '', '2', '66B', '2016-10-11 08:19:52', 'D:/Test/7.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '97', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '98', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/9.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '99', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/10.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '100', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/11.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '101', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/12.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '102', 'user2', '1166', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/13.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '103', 'user2', '1166', 'Compiling', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/14.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '104', 'user2', '1166', 'Accepted', '360K', '704MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/15.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '105', 'user2', '1166', 'Running & Judging', '', '', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/16.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '106', 'user2', '1166', 'Accepted', '360K', '704MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/17.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '107', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/18.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '108', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/19.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '109', 'user2', '1166', 'Accepted', '360K', '719MS', '2', '983B', '2016-10-11 08:19:52', 'D:/Test/20.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '110', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '111', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '112', 'user2', '1005', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '113', 'user2', '1005', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '114', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '115', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '116', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '117', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '118', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '119', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/4.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '120', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '121', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/5.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '122', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '123', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/6.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '124', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/7.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '125', 'user2', '1002', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '126', 'user2', '1003', 'Wating', '', '', '2', '', '2016-10-11 08:19:52', 'D:/Test/7.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '127', 'user2', '1003', 'Wating', '', '', '1', '', '2016-10-11 08:19:52', 'D:/Test/8.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '128', 'user2', '1003', 'Wating', '', '', '1', '', '2016-10-11 08:19:52', 'D:/Test/9.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '129', 'user2', '1016', 'Wating', '', '', '1', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '130', 'user2', '1016', 'Wating', '', '', 'GCC', '', '2016-10-11 08:19:52', 'D:/Test/2.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '131', 'user2', '1016', 'Wating', '', '', 'GCC', '', '2016-10-11 08:19:52', 'D:/Test/3.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('', '132', 'user2', '1000', 'Wating', '', '', 'GCC', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox235');
+INSERT INTO `problemstatus` VALUES ('', '133', 'user2', '1018', 'Wating', '', '', 'GCC', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox233');
+INSERT INTO `problemstatus` VALUES ('', '134', 'user2', '1068', 'Wating', '', '', 'Pascal', '', '2016-10-11 08:19:52', 'D:/Test/1.txt', 'Fox234');
+INSERT INTO `problemstatus` VALUES ('xfh', '135', 'tommy', '1013', 'Compile Error', '', '', 'GCC', '88B', '2016-10-11 08:19:52', 'C:/Test2/1.txt', 'Fox234');
 
 -- ----------------------------
 -- Table structure for rank
@@ -3243,14 +3254,21 @@ INSERT INTO `rank` VALUES ('9', 'tom', '350', '34', 'XXXXXX');
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `user_id` varchar(20) NOT NULL,
-  `user_name` varchar(20) DEFAULT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `nick_name` varchar(20) DEFAULT NULL,
   `password` varchar(20) DEFAULT NULL,
   `school` varchar(30) DEFAULT NULL,
-  `blogs` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
+  `email` varchar(30) DEFAULT NULL,
+  `blogs` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`user_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1233123', 'sbsbsbsbsb', '123123', 'é²ä¸å¤§å­¦', '111111@qq.com', null);
+INSERT INTO `user` VALUES ('adad', 'fdfdfd', '123132', null, null, null);
+INSERT INTO `user` VALUES ('oliver', 'sbsbsb', '123132', 'kkkkk', 'kkkkk@qq.com', null);
+INSERT INTO `user` VALUES ('qweqwe', 'qweqwe', '123123', 'qwewe', '12312312@qq.com', null);
+INSERT INTO `user` VALUES ('tommy', 'xfh', '123123', null, null, null);
+INSERT INTO `user` VALUES ('tttttttt', 'tttttttt', '123123', 'é²ä¸å¤§å­¦', '111111@qq.com', null);

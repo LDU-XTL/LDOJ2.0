@@ -25,8 +25,9 @@ public class LogoutHandle extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 			Constant.login_status=false;
+			request.getSession().setAttribute("result", "false");
 			String url=(String)request.getSession().getAttribute("url");
-			response.sendRedirect(url+"?result=false");
+			response.sendRedirect(url);
 		
 	}
 

@@ -30,10 +30,10 @@ public class problemStatus_sql {
 			runid=rs.getInt("runid");
 		return runid;
 	}
-	public void insert(String user_host,String user_oj,int Problem_id,String result,String memory,String time,String language,String codelength,String submit_time,String code_url) throws SQLException
+	public void insert(String user_host,String nick_name,String user_oj,int Problem_id,String result,String memory,String time,String language,String codelength,String submit_time,String code_url) throws SQLException
 	{
-		String sql = "insert into problemstatus(Username,Submitid,Problem_id,Result,memory,time,language,codelength,submittime,codeurl) "
-				+ "VALUES('"+user_host+"','"+user_oj+"','"+Problem_id+"','"+result+"','"+memory+"','"+time+"','"+language+"','"+codelength+"','"+submit_time+"','"+code_url+"');";
+		String sql = "insert into problemstatus(Username,Nickname,Submitid,Problem_id,Result,memory,time,language,codelength,submittime,codeurl) "
+				+ "VALUES('"+user_host+"','"+nick_name+"','"+user_oj+"','"+Problem_id+"','"+result+"','"+memory+"','"+time+"','"+language+"','"+codelength+"','"+submit_time+"','"+code_url+"');";
 		dd.operate(sql, 2);
 	}
 	public  void Updata(int run_id,String result,String memory,String time,String codeLength) throws SQLException

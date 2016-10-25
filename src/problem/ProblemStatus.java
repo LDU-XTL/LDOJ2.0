@@ -32,12 +32,10 @@ public class ProblemStatus {
 		String result="";
 		String memery="";
 		String time="";
-		codeLength=link.get(7).substring(4, link.get(7).length()-5);
-		memery=link.get(4).substring(4, link.get(4).length()-5);
-		time=link.get(5).substring(4, link.get(5).length()-5);
-		String[] temp= link.get(3).split("<");
-		temp=temp[2].split(">", 2);
-		result=temp[1];
+		codeLength=link.get(7).replaceAll("<.*?>", "");
+		memery=link.get(4).replaceAll("<.*?>", "");
+		time=link.get(5).replaceAll("<.*?>", "");
+		result= link.get(3).replaceAll("<.*?>", "");
 		problemStatus_sql pp =new problemStatus_sql();
 		try {
 			pp.Updata(Run_id, result, memery, time,codeLength);

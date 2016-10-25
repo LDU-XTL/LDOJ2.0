@@ -7,6 +7,8 @@
 <%@page import="com.llwwlql.*" %>
 <%@page import="java.io.*" %>
 <%@page import="java.sql.*" %>
+<%@page import="problem.ProblemStatus" %>
+<%@page import="com.llwwlql.ResultSource"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -71,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			</ul>
    			<%
    				String username="",userpass="";
-   				username=(String)request.getParameter("username");
+   				username=(String)session.getAttribute("username");
    				if(username==null)
    					{
    						username=(String)session.getAttribute("re_username");
@@ -91,32 +93,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				 session.setAttribute("url",url);
    			 %>
    			<%
-   			 	if(result.equals("false")&& Constant.login_status==false)
+   			 	if(result.equals("false") && Constant.login_status==false)
    			 	{
    			 %>
    			<ul class="u_top_2" id="u_top_2" >
-   				<form method="get" action="servlet/LoginHandle">
+   				<form method="post" action="#">
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
-						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20" value=<%=username %>></td></tr>
-						<tr><td>Password&nbsp;</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20" value=<%=userpass %>></td></tr>
+						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20"></td></tr>
+						<tr><td>Password&nbsp;</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20"></td></tr>
 			  		</tbody>
 			  	</table>
 			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;
-			  		<nav class="bounce_nav">
-			  			<a style="text-decoration: none" class="cd-signup">Register</a>
-			  		</nav>
+			  	<nav class="bounce_nav">
+			  	<a style="text-decoration: none" class="cd-signup">Register</a>
+			  	</nav>
 				</form>
    			</ul>
    			<%
    				}
    					else
    				{
-   				String user_name="";
-   				user_name=(String)request.getSession().getAttribute("user_name");
+   				String nick_name="";
+   				nick_name=(String)session.getAttribute("nick_name");
    			 %>
-   			<ul class="u_top_4" id="u_top_4">
-   			  	<img src="img/login_1.png"><a class="username"><%=user_name %></a><br />
+   			<ul class="u_top_4" id="u_top_4" >
+   			  <img src="img/login_1.png"><a class="username"><%=nick_name %></a><br />
    				<img src="img/login_2.png"><a class="username">L-75</a><br />
    				<img src="img/login_4.png"><a class="username">L-75</a><br />
    				<img src="img/login_3.png"><a href="servlet/LogoutHandle" class="username">Logout</a><br />
@@ -163,7 +165,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  						 %>		<!-- 总表 -->
  					<tr class="ps_top2" style="width: 100%;">
  						<td width="9%"><%=rs.getInt("Runid") %></td>
- 						<td width="12%"><%=rs.getString("Username") %></td>
+ 						<td width="12%"><%=rs.getString("Nickname") %></td>
  						<td width="7%" ><%=rs.getInt("Problem_id")%></td>
  						<%
  							String s=rs.getString("Result");
@@ -193,7 +195,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  					 %>
  					 <tr class="ps_top2" style="width: 100%;">
  						<td width="9%" bgcolor="#9db4dd"><%=rs.getInt("Runid") %></td>
- 						<td width="12%" bgcolor="#9db4dd"><%=rs.getString("Username") %></td>
+ 						<td width="12%" bgcolor="#9db4dd"><%=rs.getString("Nickname") %></td>
  						<td width="7%" bgcolor="#9db4dd"><%=rs.getInt("Problem_id")%></td>
  						<%
  							String s=rs.getString("Result");
@@ -215,7 +217,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("Language") %></td>
  						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("CodeLength") %></td>
  						<td width="18%" bgcolor="#9db4dd"><%=rs.getString("SubmitTime") %></td>
- 					</tr>	
+ 					</tr>
  					 <%
  					 }
  					 Constant.status_rank--;
@@ -235,17 +237,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			<span class="f2">Copyright@2012-2016 LDU ACM Team. All Rights Reserved.</span>
 			</div>
 		</div>
-			<div class="cd-user-modal">  
+		<div class="cd-user-modal">  
 	    <div class="cd-user-modal-container"> 
-	    	<form method=POST action=register>
+	    	<form method="get" action="servlet/Register">
 			<table align=center cellSpacing=3 cellPadding=3 width=400 border=0>
 				<tr><td colspan=2 width=200 height=40>
 				<h1 style="margin-top: 3%; margin-bottom: 3%;">Sign Up</td></tr>
 
-				<tr><td width=75%><input class="input" type=text id="user_id" placeholder="User ID" autocomplete="off" onfocus= "showDesc('clue_user')" onblur="checkUsername()"></td></tr>
-
-				<tr><td><input class="input" type=text id="user_id" placeholder="User ID" autocomplete="off" onfocus= "showDesc('clue_user')" onblur="checkUsername()"></td></tr>
-
+				<tr><td width=75%><input class="input" type=text id="user_id" placeholder="User Name" autocomplete="off" onfocus= "showDesc('clue_user')" onblur="checkUsername()"></td></tr>
 				<tr><td><p class="clue_user" id="clue_user">6 - 16 letters and digits allowed</p></td></tr>
 				
 				<tr><td><input class="input" type=text id="nick" placeholder="Nick Name" autocomplete="off" onfocus= "showDesc('clue_nick_name)" onblur="checkNickname()"></td></tr>
@@ -262,9 +261,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 
 				<tr><td><input class="input" type=text id="email" placeholder="Email"  autocomplete="off" onfocus= "showDesc('clue_email')" onblur="checkEmail()"></td>
-
-				<tr><td><input class="input" type=text id="email" placeholder="Email" autocomplete="off" onfocus=showDesc("clue_email") onblur="checkEmail()"></td>
-
 				<tr><td><p class="clue_email" id="clue_email">Email address,Allow null values</p></td></tr>
 				
 				</tr><tr><td align=left>
@@ -273,5 +269,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</td></tr></table></form>
 	    </div> 
 	</div>
+	<%
+		
+			String sub_judge=(String)session.getAttribute("sub_judge");
+			if(sub_judge.equals("true"))
+			{
+				ProblemStatus ps = new ProblemStatus();
+				String sub_result= "Waiting";
+				String resultUrl =(String)session.getAttribute("resultUrl");
+				ResultSource resultSource = new ResultSource();
+				int runid=Integer.parseInt((String)session.getAttribute("runid"));
+				while(sub_result.equals("Waiting") || sub_result.equals("Compiling") || sub_result.equals("Running & Judging"))
+				{
+					Thread.sleep(100);
+					String sourceString = resultSource.GetResult(resultUrl);
+					sub_result = ps.problemStatus(sourceString,runid);
+				}
+				request.getSession().setAttribute("sub_judge","false");
+			}
+			%>
   </body>
 </html>

@@ -20,12 +20,14 @@ public class LoginHandle extends HttpServlet {
 	
 	public void doGet (HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
-		boolean result=false;
+		String result="false";
 		try {
 			String username="";
 			String userpass="";
+			String nick_name="";
 			username=request.getParameter("username");
 			userpass=request.getParameter("userpass");
+			request.getSession().setAttribute("user_name",username);
 			String url=(String)request.getSession().getAttribute("url");
 			System.out.println(url);
 			String sql="select user_name,password from user where user_name='"+username+"'";
@@ -34,22 +36,35 @@ public class LoginHandle extends HttpServlet {
 			
 			if(!rs.next())
 			{
-				result=false;
+				result="false";
 				JOptionPane.showMessageDialog(null, "No user name found");
 			}
 			else {
 				if(rs.getString("password").equals(userpass))
 				{
-					result=true;
+					result="true";
 					Constant.login_status=true;
-					request.getSession().setAttribute("user_name",username);
+					String nicksql="select nick_name from user where user_name='"+username+"'";
+					ResultSet rsnick=null;
+					rsnick=SqlConnect.find(nicksql);
+					if(rsnick.next())
+						nick_name=rsnick.getString("nick_name");
+					request.getSession().setAttribute("nick_name",nick_name);
 				}
 				else 
 				{
-					result=false;
+					result="false";
+					JOptionPane.showMessageDialog(null, "Wrong password");
 				}
 			}
-			response.sendRedirect(url+"?result="+result+"&username="+username);
+			if(result.equals("true"))
+			{
+				request.getSession().setAttribute("result","true");
+				request.getSession().setAttribute("username",username);
+				response.sendRedirect(url);
+			}
+			else
+				response.sendRedirect(url);
 			//response.sendRedirect("index.jsp");
 		} 
 		catch (SQLException e) {
