@@ -90,9 +90,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				   if(result==null)
    				    result="false";
    				   /// request.getSession().setAttribute("pid", pid);
-				 //String url=request.getRequestURI();
+				 String url=request.getRequestURI()+"?pid="+pid;
 				 //out.print(url);
-				// session.setAttribute("url",url);
+				 session.setAttribute("url",url);
    			 %>
    			<%
    			 	if(result.equals("false") && Constant.login_status==false)
