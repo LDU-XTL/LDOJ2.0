@@ -239,7 +239,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<div class="cd-user-modal">  
 	    <div class="cd-user-modal-container"> 
-	    	<form method="get" action="servlet/Register">
+	    	<form method="get" action="servlet/Register/">
 			<table align=center cellSpacing=3 cellPadding=3 width=400 border=0>
 				<tr><td colspan=2 width=200 height=40>
 				<h1 style="margin-top: 3%; margin-bottom: 3%;">Sign Up</td></tr>

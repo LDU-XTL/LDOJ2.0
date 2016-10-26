@@ -1,5 +1,5 @@
 /**
- * 焦点在该框上显示提示信息
+ * 锟斤拷锟斤拷锟节该匡拷锟斤拷锟斤拷示锟斤拷示锟斤拷息
  * @return
  */
 function showDesc(id)
@@ -9,7 +9,7 @@ function showDesc(id)
 }
 
 /**
- * 检查UserName格式是否正确
+ * 锟斤拷锟経serName锟斤拷式锟角凤拷锟斤拷确
  * @return
  */
 
@@ -37,7 +37,7 @@ function checkUsername()
     }
 }
 /**
- * 检查NickName格式是否正确
+ * 锟斤拷锟絅ickName锟斤拷式锟角凤拷锟斤拷确
  * @return
  */
 
@@ -65,7 +65,7 @@ function checkNickname(){
 }
 
 /**
- * 检查密码格式是否正确
+ * 锟斤拷锟斤拷锟斤拷锟斤拷式锟角凤拷锟斤拷确
  * @return
  */
 
@@ -93,7 +93,7 @@ function checkPassword()
 }
 
 /**
- * 检查密码和确认密码是否一致
+ * 锟斤拷锟斤拷锟斤拷锟斤拷确锟斤拷锟斤拷锟斤拷锟角凤拷一锟斤拷
  * @return
  */
 
@@ -121,7 +121,7 @@ function checkPassword2()
 }
 
 /**
- * 检查School格式是否正确
+ * 锟斤拷锟絊chool锟斤拷式锟角凤拷锟斤拷确
  * @return
  */
 
@@ -133,7 +133,7 @@ function checkSchool(){
 	return true;
 }
 /**
- * 检查Email格式是否正确
+ * 锟斤拷锟紼mail锟斤拷式锟角凤拷锟斤拷确
  * @return
  */
 
@@ -159,4 +159,13 @@ function checkEmail()
 		obj.style.display="none";
 		return true;
 	}
+}
+function check(){
+	var peace = new array[5];
+	if(checkUsername()==true)
+		peace[0]=1;
+	else{
+		peace[0]=0;
+	}
+	
 }

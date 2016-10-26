@@ -156,7 +156,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				</tr><tr><td align=left>
 				
-				<input type=submit value="Join Us" name=submit class="button20">
+				<input type=submit value="Join Us" name=submit class="button20" onclick="check()">
 				</td></tr></table></form>
 	    </div> 
 	</div>
