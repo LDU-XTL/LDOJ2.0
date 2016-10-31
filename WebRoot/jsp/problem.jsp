@@ -14,6 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     <%
    		String pid=request.getParameter("pid");///获取跳转页面的pid
+   		session.setAttribute("pid",pid);
      %>
    		<title>Problem 
    			<%=pid %>
@@ -37,94 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
  		<div class="contain">
-				<div class="top">
-   			<div class="top_1">
-   			<img alt="lduacm" src="img/ldu_top_3.jpg"width="70%" height="100%">
-   			<img alt="lduacm" src="img/ldu_top_2.jpg" width="20%" height="100%" id="img_top_1">
-   			</div>
-   			<ul class="u_top_1">
-   				<li>Recent Contest</li>
-   				<li>ProblemSet</li>
-   				<li>Problems</li>
-   				<li>Rank</li>
-   				<li>Blogs</li>
-   			</ul>
-   			<ul class="u_top_3">
-   				<li><a href="http://codeforces.com/" target="_blank">CodeForce</a></li>
-   				<li><a href="http://bestcoder.hdu.edu.cn/" target="_blank">BestCoder</a></li>
-   				<li><a href="https://icpc.baylor.edu/" target="_blank">ACM ICPC</a></li>
-   			</ul>
-   			<ul class="u_top_3">
-   				<li><a href="jsp/problemset.jsp">Problems</a></li>
-   				<li><a href="jsp/first_page.jsp">Online Status</a></li>
-   				<li><a href="jsp/submit.jsp">Submit Problem</a></li>
-   			</ul>
-   			<ul class="u_top_3">
-   				<li><a href="">Freshman Contest</a></li>
-   				<li><a href="">Region</a></li>
-   				<li><a href="">Common Contest</a></li>
-   			</ul>
-   			<ul class="u_top_3">
-   				<li><a href="">Common Contest</a></li>
-   				<li><a href="">Region</a></li>
-   				<li><a href="">Total Rank</a></li>
-   			</ul>
-   			<%
-   				String username="",userpass="";
-   				username=(String)session.getAttribute("username");
-   				if(username==null)
-   					{
-   						username=(String)session.getAttribute("re_username");
-   						if(username==null)
-   						username="";
-   					}
-   				userpass=(String)session.getAttribute("re_password");
-   				if(userpass==null)
-   				userpass="";
-   					String result="false";
-   				   result=(String)request.getParameter("result");
-   				   if(result==null)
-   				    result="false";
-   				    
-				 String url=request.getRequestURI()+"?pid="+pid;
-				 //out.print(url);
-				 session.setAttribute("url",url);
-   			 %>
-   			<%
-   			 	if(result.equals("false") && Constant.login_status==false)
-   			 	{
-   			 %>
-   			<ul class="u_top_2" id="u_top_2" >
-   				<form method="get" action="servlet/LoginHandle">
-			  	<table width="68" border="0" align="center" cellspacing="0">
-			  		<tbody>
-						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20" value=<%=username %>></td></tr>
-						<tr><td>Password&nbsp;</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20" value=<%=userpass %>></td></tr>
-			  		</tbody>
-			  	</table>
-			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;
-			  		<nav class="bounce_nav">
-			  			<a style="text-decoration: none" class="cd-signup">Register</a>
-			  		</nav>
-				</form>
-   			</ul>
-   			<%
-   				}
-   					else
-   				{
-   				String nick_name="";
-   				nick_name=(String)request.getSession().getAttribute("nick_name");
-   			 %>
-   			<ul class="u_top_4" id="u_top_4">
-   			  	<img src="img/login_1.png"><a class="username"><%=nick_name %></a><br />
-   				<img src="img/login_2.png"><a class="username">L-75</a><br />
-   				<img src="img/login_4.png"><a class="username">L-75</a><br />
-   				<img src="img/login_3.png"><a href="servlet/LogoutHandle" class="username">Logout</a><br />
-   			</ul>
-   			<%
-   				}
-   			 %>
-   		</div>
+				<jsp:include page="top.jsp"></jsp:include>
 			<div class="body">
 			<%
 			ResultSet rs1=null;
@@ -225,6 +139,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<input type=submit value="Join Us" name=submit class="button20">
 				</td></tr></table></form>
 	    </div> 
+	</div>
 	</div>
   </body>
 </html>

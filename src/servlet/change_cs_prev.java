@@ -14,8 +14,9 @@ public class change_cs_prev extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-	Constant.status_rank+=8;
+		int status_rank=Integer.parseInt((String)request.getSession().getAttribute("status_rank"));
+		status_rank+=8;
+		request.getSession().setAttribute("status_rank", String.valueOf(status_rank));
 	response.sendRedirect("../jsp/prev_page.jsp");
 	}
 

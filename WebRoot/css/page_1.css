@@ -25,7 +25,7 @@ body{
 }
 .top{
 	width: 99.8%;
-	height: 230px;
+	height: 250px;
 	border: solid 1.5px #006400;
 }
 .top_1{
@@ -277,7 +277,7 @@ div{
 	height: 40px;
 }
 .ps_top2 td{
-	height: 39px;
+	height: 20px;
 }
 .ps_top2 td a:HOVER{
 	color: red;
@@ -347,7 +347,8 @@ div{
     font-size: 12px;
     font-weight: bold;
     color: #1a5cc8;
-    padding-top: 25px;
+    padding-top: 20px;
+    padding-left: 170px;
 }
 .ps_page a:HOVER{
 	color: red;
@@ -359,4 +360,8 @@ div{
 	color:#231f6d;
 	margin:auto;
 	text-align: center; 
+}
+.log_mess{
+	color:red;
+	font-size: 13px;
 }

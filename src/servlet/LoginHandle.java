@@ -15,12 +15,15 @@ import javax.swing.JOptionPane;
 import constant.Constant;
 import server.Server;
 import server.SqlConnect;
-
+/*
+ * 
+ * 功能：登陆处理
+ */
 public class LoginHandle extends HttpServlet {
 	
 	public void doGet (HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
-		String result="false";
+		request.getSession().setAttribute("result","false");
 		try {
 			String username="";
 			String userpass="";
@@ -36,14 +39,16 @@ public class LoginHandle extends HttpServlet {
 			
 			if(!rs.next())
 			{
-				result="false";
-				JOptionPane.showMessageDialog(null, "No user name found");
+				request.getSession().setAttribute("result", "false");
+				request.getSession().setAttribute("login_mess", "false");
+				//JOptionPane.showMessageDialog(null, "No user name found");
 			}
 			else {
 				if(rs.getString("password").equals(userpass))
 				{
-					result="true";
-					Constant.login_status=true;
+					request.getSession().setAttribute("result", "true");
+					//Constant.login_status=true;
+					request.getSession().setAttribute("login_status", "true");
 					String nicksql="select nick_name from user where user_name='"+username+"'";
 					ResultSet rsnick=null;
 					rsnick=SqlConnect.find(nicksql);
@@ -53,10 +58,12 @@ public class LoginHandle extends HttpServlet {
 				}
 				else 
 				{
-					result="false";
-					JOptionPane.showMessageDialog(null, "Wrong password");
+					request.getSession().setAttribute("result", "false");
+					request.getSession().setAttribute("login_mess", "false");
+					//JOptionPane.showMessageDialog(null, "Wrong password");
 				}
 			}
+			String result=(String)request.getSession().getAttribute("result");
 			if(result.equals("true"))
 			{
 				request.getSession().setAttribute("result","true");
