@@ -92,8 +92,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				<form method="get" action="servlet/LoginHandle" >
 			  	<table width="68" border="0" align="center" cellspacing="0">
 			  		<tbody>
-						<tr><td width="40" >User ID&nbsp;</td><td align="right"><input name="username" type="text" class="text90" maxlength="20" value=<%=username %>></td></tr>
-						<tr><td>Password&nbsp;</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20" value=<%=userpass %>></td></tr>
+						<tr><td width="40" >UserName:</td><td align="right"><input name="username" type="text" class="text90" maxlength="20" value=<%=username %>></td></tr>
+						<tr><td>Password:</td><td align="right"><input name="userpass" type="password" class="text90" maxlength="20" value=<%=userpass %>></td></tr>
 			  		</tbody>
 			  	</table>
 			  	<input name="login" type="submit" class="button40" value="Sign In" style="background-color: lightgreen; border: dotted 1px;">&nbsp;

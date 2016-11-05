@@ -191,7 +191,11 @@ DEMO 2
 .u_top_2 form{
 	margin-top: 2%;
 }
-
+.u_top_2 td{
+	color: #102538;
+    font-family: collegiate-normal;
+    font-size: 18px;
+}
 .u_top_2 form table tbody tr td input,.login form table tbody tr td input{
 	margin-top: 5%;
 	width: 95px;

@@ -72,15 +72,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  		int status_rank=Integer.parseInt((String)session.getAttribute("status_rank"));
 			  		int contant=status_rank;
 			  		String sql;
-			  		if(contant+8<max)
+			  		if(contant+15<max)
 				  		{
-				  			sql="select * from (select * from problemstatus ORDER BY Runid asc limit "+String.valueOf(contant-8)+",8) as T order by T.Runid desc";  
+				  			sql="select * from (select * from problemstatus ORDER BY Runid asc limit "+String.valueOf(contant-15)+",15) as T order by T.Runid desc";  
 				  			session.setAttribute("flag_prev","0");
 				  		}
 			  		else
 			  			{
 			  				int special=max-contant;
-			  				sql="select * from (select * from problemstatus ORDER BY Runid ASC limit "+String.valueOf(contant-8)+","+String.valueOf(special)+") as T order by T.Runid desc";
+			  				sql="select * from (select * from problemstatus ORDER BY Runid ASC limit "+String.valueOf(contant-15)+","+String.valueOf(special)+") as T order by T.Runid desc";
 			  				//flag_prev=1;
 			  				session.setAttribute("flag_prev","1");
 			  			}
@@ -121,29 +121,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  					 else{
  					 %>
  					 <tr class="ps_top2" style="width: 100%; height:15px;">
- 						<td width="9%" bgcolor="#9db4dd"><%=rs.getInt("Runid") %></td>
- 						<td width="12%" bgcolor="#9db4dd"><%=rs.getString("Username") %></td>
- 						<td width="7%" bgcolor="#9db4dd"><%=rs.getInt("Problem_id")%></td>
+ 						<td width="9%" bgcolor="#cde1ec"><%=rs.getInt("Runid") %></td>
+ 						<td width="12%" bgcolor="#cde1ec"><%=rs.getString("Username") %></td>
+ 						<td width="7%" bgcolor="#cde1ec"><%=rs.getInt("Problem_id")%></td>
  						<%
  							String s=rs.getString("Result");
  							if(s.equals("Accepted"))
  							{
  						 %>
- 						<td width="24%" style="color: red;" bgcolor="#9db4dd" ><%=rs.getString("Result")%></td>
+ 						<td width="24%" style="color: red;" bgcolor="#cde1ec" ><%=rs.getString("Result")%></td>
  						<%
  						}
  							else
  							{
  						 %>
- 						 <td width="24%" style="color: green;" bgcolor="#9db4dd" ><%=rs.getString("Result")%></td>
+ 						 <td width="24%" style="color: green;" bgcolor="#cde1ec" ><%=rs.getString("Result")%></td>
  						 <%
  						 	}
  						  %>
- 						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("Memory") %></td>
- 						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("Time") %></td>
- 						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("Language") %></td>
- 						<td width="8%" bgcolor="#9db4dd"><%=rs.getString("CodeLength") %></td>
- 						<td width="18%" bgcolor="#9db4dd"><%=rs.getString("SubmitTime") %></td>
+ 						<td width="8%" bgcolor="#cde1ec"><%=rs.getString("Memory") %></td>
+ 						<td width="8%" bgcolor="#cde1ec"><%=rs.getString("Time") %></td>
+ 						<td width="8%" bgcolor="#cde1ec"><%=rs.getString("Language") %></td>
+ 						<td width="8%" bgcolor="#cde1ec"><%=rs.getString("CodeLength") %></td>
+ 						<td width="18%" bgcolor="#cde1ec"><%=rs.getString("SubmitTime") %></td>
  					</tr>	
  					 <%
  					 }
@@ -173,42 +173,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  					 </p>
 			</div>
 			<div class="foot">
-					<span class="f1">LuDong Unversity ACM</span>
-<br />
+   			<span class="f1">LuDong Unversity Online Judge 1.0</span>
+   			<span class="f2">Developer:Lu Qilu Tang Yukai Xu Fuhao</span>
    			<span class="f2">Copyright@2012-2016 LDU ACM Team. All Rights Reserved.</span>
-			</div>
+   		</div>
 		</div>
-		<div class="cd-user-modal">  
-	    <div class="cd-user-modal-container"> 
-	    	<form method="get" action="servlet/Register">
-			<table align=center cellSpacing=3 cellPadding=3 width=400 border=0>
-				<tr><td colspan=2 width=200 height=40>
-				<h1 style="margin-top: 3%; margin-bottom: 3%;">Sign Up</td></tr>
-
-				<tr><td width=75%><input class="input" type=text id="user_id" placeholder="User Name" autocomplete="off" onfocus= "showDesc('clue_user')" onblur="checkUsername()"></td></tr>
-				<tr><td><p class="clue_user" id="clue_user">6 - 16 letters and digits allowed</p></td></tr>
-				
-				<tr><td><input class="input" type=text id="nick" placeholder="Nick Name" autocomplete="off" onfocus= "showDesc('clue_nick_name)" onblur="checkNickname()"></td></tr>
-				<tr><td><p class="clue_nick_name" id="clue_nick_name">2 - 18 letters , digits and Chinese allowed</p></td></tr>
-				
-				<tr><td><input class="input" type=password id="password" autocomplete="off" placeholder="Password" onfocus="showDesc('clue_password')" onblur="checkPassword()"></td></tr>
-				<tr><td><p class="clue_password" id="clue_password">6 - 18 letters and digits allowed</p></td></tr>
-				
-				<tr><td><input class="input" type=password id="rptPassword" autocomplete="off" placeholder="Repeat Password" onfocus= "showDesc('clue_rptpassword')" onblur="checkPassword2()"></td></tr>
-				<tr><td><p class="clue_rptpassword" id="clue_rptpassword">6 - 18 letters and digits allowed</p></td></tr>
-				
-				<tr><td><input class="input" type=text id="school" placeholder="School" autocomplete="off" onfocus= "showDesc('clue_school')" onblur="checkSchool()"></td></tr>
-				<tr><td><p class="clue_school" id="clue_school">School,Allow null values</p></td></tr>
-				
-
-				<tr><td><input class="input" type=text id="email" placeholder="Email"  autocomplete="off" onfocus= "showDesc('clue_email')" onblur="checkEmail()"></td>
-				<tr><td><p class="clue_email" id="clue_email">Email address,Allow null values</p></td></tr>
-				
-				</tr><tr><td align=left>
-				
-				<input type=submit value="Join Us" name=submit class="button20">
-				</td></tr></table></form>
-	    </div> 
-	</div>
+		<jsp:include page="register.jsp"></jsp:include>
   </body>
 </html>

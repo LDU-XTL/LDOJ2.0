@@ -39,7 +39,7 @@ public class SubHandle extends HttpServlet {
 		
 		try {
 			String result=(String)req.getSession().getAttribute("result");
-			if(result.equals("false"))
+			if(result.equals("false") || result==null)
 				{
 				String judge_name="",judge_pass="";
 					 judge_name=(String)req.getSession().getAttribute("username");

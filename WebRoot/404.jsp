@@ -10,8 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>   
     <title>Welcome to Lu Dong University ACM</title>
     <link rel="shortcut icon" href="img/ldu_top_1.ico"/>
-    <link href="css/page_1.css" type="text/css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css"  href="css/register.css" />
+    <link href="../css/page_1.css" type="text/css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css"  href="../css/register.css" />
     <script type="text/javascript" src="js/register.js" ></script>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
 	<script type="text/javascript" src="js/register_jquery.js" ></script>
@@ -27,19 +27,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="contain">
    		<jsp:include page="jsp/top.jsp"></jsp:include>
    		<div class="body">
-   		  <span class="t1">Welcome to Ludong University ACM</span>
-   		  <br />
+   		<br>
    		  <div class="img_1">
-   		  	<img src="img/body_1.jpg"width="100%" height="100%"  />
+   		  	<img src="img/404_1.jpg"width="100%" height="100%"  />
    		  </div>
+   		  	<font class="e_500_1">您可以：</font>
+   		  	<form action="index.jsp">
+   		  		<input type="submit"value="访问首页" class="e_500_2">
+   		  	</form>
+   		  <br>
    		</div>
    		<div class="foot">
-   			<span class="f1">LuDong Unversity Online Judge 1.0</span>
-   			<span class="f2">Developer:Lu Qilu Tang Yukai Xu Fuhao</span>
+   			<span class="f1">LuDong Unversity ACM</span>
+<br />
    			<span class="f2">Copyright@2012-2016 LDU ACM Team. All Rights Reserved.</span>
    		</div>
     
     </div>
-		<jsp:include page="jsp/register.jsp"></jsp:include>
   </body>
 </html>
