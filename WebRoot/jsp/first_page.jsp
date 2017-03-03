@@ -59,11 +59,11 @@
 					<td width="18%">Submit Time</td>
 				</tr>
 				<%
-					Server server = new Server();
+					//Server server = new Server();
 					ResultSet rs = null, rs1 = null;
 					///获取当前最大Runid
 					String s1 = "select Runid from problemstatus order by Runid desc limit 1";
-					rs1 = server.operate(s1, 1);
+					rs1 = SqlConnect.find(s1);
 					while (rs1.next()) {
 						//out.println(rs1.getInt("Runid"));
 						//Constant.status_rank=1;
@@ -77,7 +77,7 @@
 					int status_rank = Integer.parseInt((String) session
 							.getAttribute("status_rank"));
 					int current = status_rank;
-					rs = server.operate(sql, 1);
+					rs = SqlConnect.find(sql);
 
 					while (rs.next() && (current - status_rank <= 15)) {
 						if (status_rank % 2 == 0) {

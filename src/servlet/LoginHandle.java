@@ -46,7 +46,7 @@ public class LoginHandle extends HttpServlet {
 			else {
 				if(rs.getString("password").equals(userpass))
 				{
-					request.getSession().setAttribute("result", "true");
+					request.getSession().setAttribute("result","true");
 					//Constant.login_status=true;
 					request.getSession().setAttribute("login_status", "true");
 					String nicksql="select nick_name from user where user_name='"+username+"'";

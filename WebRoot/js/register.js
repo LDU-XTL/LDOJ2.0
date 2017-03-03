@@ -13,7 +13,7 @@ function showDesc(id)
  * @return
  */
 
-function checkUsername()
+function checkusername()
 {
     var user = document.getElementById("user_id");
     var obj = document.getElementById("clue_user");

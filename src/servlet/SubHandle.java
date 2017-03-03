@@ -39,6 +39,8 @@ public class SubHandle extends HttpServlet {
 		
 		try {
 			String result=(String)req.getSession().getAttribute("result");
+			if(result==null)
+				result="false";
 			if(result.equals("false") || result==null)
 				{
 				String judge_name="",judge_pass="";
